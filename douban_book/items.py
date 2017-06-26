@@ -1,14 +1,18 @@
 # -*- coding: utf-8 -*-
-
-# Define here the models for your scraped items
-#
-# See documentation in:
-# http://doc.scrapy.org/en/latest/topics/items.html
-
 import scrapy
 
 
-class DoubanBookItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class BookItem(scrapy.Item):
+    name = scrapy.Field()
+    search_keywords = scrapy.Field()
+    description = scrapy.Field()
+    authors = scrapy.Field()
+    publisher = scrapy.Field()
+    translators = scrapy.Field()
+    publish_at = scrapy.Field()
+    page_count = scrapy.Field()
+    price = scrapy.Field()
+    isbn = scrapy.Field()
+    catalogue = scrapy.Field()
+    douban_tags = scrapy.Field()
+    douban_score = scrapy.Field()
