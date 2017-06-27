@@ -15,7 +15,7 @@ class StripValues(object):
 
 class StripAndJoin(object):
     def __call__(self, values):
-        return ''.join(strip_values(values))
+        return '\n'.join(strip_values(values))
 
 
 class DateStrToTimeStamp(object):

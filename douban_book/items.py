@@ -7,6 +7,8 @@ from .loader_processor import StripAndJoin, StripValues, DateStrToTimeStamp, Fir
 
 class BookItem(scrapy.Item):
     default_output_processor = StripAndJoin()
+    book_id = scrapy.Field()
+    douban_book_id = scrapy.Field()
     name = scrapy.Field(output_processor=TakeFirst())
     search_keywords = scrapy.Field(output_processor=StripValues())
     description = scrapy.Field()

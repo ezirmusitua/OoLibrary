@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+import hashlib
+import re
+import time
+
 import scrapy
 from scrapy.loader import ItemLoader
 from scrapy.spiders import CrawlSpider
@@ -40,6 +44,9 @@ class BookSpider(CrawlSpider):
     def parse_book(self, response):
         book_loader = ItemLoader(item=BookItem(), response=response)
         name = response.xpath('//*[@id="wrapper"]/h1/span/text()').extract_first()
+        book_loader.add_value('book_id', getattr(self, 'book_id',
+                                                 'book:' + hashlib.md5(str(time.time()).encode()).hexdigest()))
+        book_loader.add_value('douban_book_id', re.match('^https://.*/subject/(\d+)/$', response.url).groups()[0])
         book_loader.add_value('search_keywords', getattr(self, 'keywords', '').split(','))
         book_loader.add_xpath('description',
                               '//*[@id="link-report"]/*[contains(concat(" ", @class, " "), "hidden")]//' +
