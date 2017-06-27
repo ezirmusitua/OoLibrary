@@ -41,7 +41,9 @@ class BookSpider(CrawlSpider):
         book_loader = ItemLoader(item=BookItem(), response=response)
         name = response.xpath('//*[@id="wrapper"]/h1/span/text()').extract_first()
         book_loader.add_value('search_keywords', getattr(self, 'keywords', '').split(','))
-        book_loader.add_xpath('description', '//*[@id="link-report"]/div[1]/div/p/text()')
+        book_loader.add_xpath('description',
+                              '//*[@id="link-report"]/*[contains(concat(" ", @class, " "), "hidden")]//' +
+                              '*[contains(concat(" ", @class, " "), "intro")]/p/text()')
         book_loader.add_xpath('douban_tags', '//*[@id="db-tags-section"]/div/span/a/text()')
         book_loader.add_xpath('douban_score', '//*[@id="interest_sectl"]/div/div[2]/strong/text()')
         book_loader.add_xpath('catalogue', '//*[@id="dir_1921890_full"]/text()')
