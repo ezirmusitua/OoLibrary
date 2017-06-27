@@ -23,7 +23,6 @@ class DateStrToTimeStamp(object):
         if len(values) < 1:
             return -1
         date_list = DateStrToTimeStamp.parse_origin_date(values[0])
-        print(date_list)
         date_str = DateStrToTimeStamp.concat_date_str(date_list)
         return DateStrToTimeStamp.to_ms(date_str)
 

@@ -12,6 +12,7 @@ def lint_info_content(content):
         return None
     return content.strip()
 
+
 class BookSpider(CrawlSpider):
     name = 'book_detail'
     allowed_domains = ['douban.com']
@@ -54,10 +55,7 @@ class BookSpider(CrawlSpider):
         if translators_index > 0:
             book_loader.add_xpath('translators', '//*[@id="info"]/span[{}]//a/text()'.format(translators_index + 1))
         info_labels = list(filter(lambda x: x != '作者' and x != '译者' and x != '丛书:', info_labels))
-        self.logger.info(info_labels)
-        self.logger.info(info_contents)
         for index, label in enumerate(info_labels):
-            self.logger.info(label)
             if label == '作者' or label == '译者':
                 continue
             if label == '出版社:':
@@ -70,4 +68,4 @@ class BookSpider(CrawlSpider):
                 book_loader.add_value('page_count', info_contents[index])
             if label == 'ISBN:':
                 book_loader.add_value('isbn', info_contents[index])
-        return book_loader.load_item()
+        yield book_loader.load_item()

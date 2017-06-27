@@ -10,7 +10,7 @@ from scrapy.exporters import JsonItemExporter
 
 class JsonExporterPipeline(object):
     def __init__(self):
-        self.file = None
+        self.files = dict()
         self.exporter = None
 
     @classmethod
@@ -18,17 +18,18 @@ class JsonExporterPipeline(object):
         pipeline = cls()
         crawler.signals.connect(pipeline.spider_opened, signals.spider_opened)
         crawler.signals.connect(pipeline.spider_closed, signals.spider_closed)
+        return pipeline
 
     def spider_opened(self, spider):
-        self.file = open('spider-%s.json' % spider.name, 'w+b')
-        self.exporter = JsonItemExporter(self.file)
+        file = open('%s.json' % spider.name, 'w+b')
+        self.files[spider] = file
+        self.exporter = JsonItemExporter(file)
         self.exporter.start_exporting()
-        pass
 
     def spider_closed(self, spider):
         self.exporter.finish_exporting()
-        self.file.close()
-        pass
+        file = self.files.pop(spider)
+        file.close()
 
     def process_item(self, item, spider):
         self.exporter.export_item(item)
