@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56ca0174-b1d3-467d-b96f-de7d6cea0aa0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/douban_book/items.py" afterPath="$PROJECT_DIR$/douban_book/items.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/jferroal.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/jferroal.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/douban_book/settings.py" afterPath="$PROJECT_DIR$/douban_book/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/douban_book/spiders/book.py" afterPath="$PROJECT_DIR$/douban_book/spiders/book.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,8 +25,8 @@
                   <caret line="11" column="77" lean-forward="false" selection-start-line="11" selection-start-column="77" selection-end-line="11" selection-end-column="77" />
                   <folding>
                     <element signature="e#24#37#0" expanded="true" />
-                    <marker date="1498529081583" expanded="true" signature="186:2189" ph="..." />
-                    <marker date="1498529081583" expanded="true" signature="1108:2189" ph="..." />
+                    <marker date="1498529774598" expanded="true" signature="186:2192" ph="..." />
+                    <marker date="1498529774598" expanded="true" signature="1109:2192" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -34,8 +35,8 @@
           <file leaf-file-name="items.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/douban_book/items.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="368">
-                  <caret line="16" column="62" lean-forward="false" selection-start-line="16" selection-start-column="62" selection-end-line="16" selection-end-column="62" />
+                <state relative-caret-position="322">
+                  <caret line="14" column="10" lean-forward="false" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
                   <folding>
                     <element signature="e#24#37#0" expanded="true" />
                   </folding>
@@ -58,8 +59,8 @@
           <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/douban_book/settings.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="410">
-                  <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+                <state relative-caret-position="184">
+                  <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
                   <folding />
                 </state>
               </provider>
@@ -84,8 +85,8 @@
           <file leaf-file-name="book.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/douban_book/spiders/book.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1035">
-                  <caret line="45" column="8" lean-forward="false" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+                <state relative-caret-position="644">
+                  <caret line="40" column="72" lean-forward="true" selection-start-line="40" selection-start-column="72" selection-end-line="40" selection-end-column="72" />
                   <folding>
                     <element signature="e#24#37#0" expanded="true" />
                   </folding>
@@ -109,6 +110,8 @@
       <find>StripAndJoin</find>
       <find>push</find>
       <find>pipelines</find>
+      <find>USER</find>
+      <find>ROBO</find>
     </findStrings>
     <replaceStrings>
       <replace>append</replace>
@@ -124,8 +127,8 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/douban_book/loader_processor.py" />
         <option value="$PROJECT_DIR$/douban_book/pipelines.py" />
-        <option value="$PROJECT_DIR$/douban_book/settings.py" />
         <option value="$PROJECT_DIR$/douban_book/items.py" />
+        <option value="$PROJECT_DIR$/douban_book/settings.py" />
         <option value="$PROJECT_DIR$/douban_book/spiders/book.py" />
       </list>
     </option>
@@ -476,14 +479,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/douban_book/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -510,10 +505,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/douban_book/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/douban_book/items.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="62" lean-forward="false" selection-start-line="16" selection-start-column="62" selection-end-line="16" selection-end-column="62" />
+        <state relative-caret-position="322">
+          <caret line="14" column="10" lean-forward="false" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
           <folding>
             <element signature="e#24#37#0" expanded="true" />
           </folding>
@@ -522,8 +525,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/douban_book/spiders/book.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1035">
-          <caret line="45" column="8" lean-forward="false" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+        <state relative-caret-position="644">
+          <caret line="40" column="72" lean-forward="true" selection-start-line="40" selection-start-column="72" selection-end-line="40" selection-end-column="72" />
           <folding>
             <element signature="e#24#37#0" expanded="true" />
           </folding>

@@ -13,7 +13,7 @@ class BookSpider(CrawlSpider):
 
     def start_requests(self):
         url = ''
-        keyword_str = self.getattr('keywords', '')
+        keyword_str = getattr(self, 'keywords', '')
         if keyword_str is not '':
             url = BookSpider.search_url_base.format(keyword_str)
         yield scrapy.Request(url, self.parse_search)
@@ -32,11 +32,11 @@ class BookSpider(CrawlSpider):
     def parse_book(self, response):
         book_loader = ItemLoader(item=BookItem(), response=response)
         book_loader.add_xpath('name', '//*[@id="wrapper"]/h1/span/text()')
-        book_loader.add_value('search_keywords', self.getattr('keywords', '').split(','))
+        book_loader.add_value('search_keywords', getattr(self, 'keywords', '').split(','))
         book_loader.add_xpath('description', '//*[@id="link-report"]/div[1]/div/p/text()')
         book_loader.add_xpath('authors', '//*[@id="info"]/span[1]/a/text()')
         book_loader.add_xpath('publisher', '//*[@id="info"]/text()[1]')
-        book_loader.add_xpath('translator', '//*[@id="info"]/span[3]/a/text()')
+        book_loader.add_xpath('translators', '//*[@id="info"]/span[3]/a/text()')
         book_loader.add_xpath('publish_at', '//*[@id="info"]/text()[2]')
         book_loader.add_xpath('page_count', '//*[@id="info"]/text()[3]')
         book_loader.add_xpath('isbn', '//*[@id="info"]/text()[7]')
