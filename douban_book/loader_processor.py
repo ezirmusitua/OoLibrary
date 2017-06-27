@@ -53,3 +53,10 @@ class DateStrToTimeStamp(object):
     def to_ms(date_string):
         dt = datetime.datetime.strptime(date_string, "%Y/%m/%d")
         return (time.mktime(dt.timetuple()) + (dt.microsecond / 1000000.0)) * 1000
+
+
+class FirstInteger(object):
+    def __call__(self, values):
+        if len(values) < 1:
+            return -1
+        return int(values[0])
