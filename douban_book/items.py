@@ -15,7 +15,6 @@ class BookItem(scrapy.Item):
     translators = scrapy.Field(output_processor=StripValues())
     publish_at = scrapy.Field(output_processor=DateStrToTimeStamp())
     page_count = scrapy.Field(output_processor=FirstInteger())
-    price = scrapy.Field(output_processor=FirstInteger())
     isbn = scrapy.Field()
     catalogue = scrapy.Field()
     douban_tags = scrapy.Field(output_processor=StripValues())
