@@ -2,7 +2,7 @@
 import scrapy
 from scrapy.loader.processors import TakeFirst
 
-from .loader_processor import StripAndJoin, StripValues, DateStrToTimeStamp, FirstInteger
+from .loader_processor import StripAndJoin, StripValues, DateStrToTimeStamp, FirstInteger, FirstFloat
 
 
 class BookItem(scrapy.Item):
@@ -18,4 +18,4 @@ class BookItem(scrapy.Item):
     isbn = scrapy.Field()
     catalogue = scrapy.Field()
     douban_tags = scrapy.Field(output_processor=StripValues())
-    douban_score = scrapy.Field(output_processor=FirstInteger())
+    douban_score = scrapy.Field(output_processor=FirstFloat())

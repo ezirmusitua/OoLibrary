@@ -20,7 +20,7 @@ class JsonExporterPipeline(object):
         crawler.signals.connect(pipeline.spider_closed, signals.spider_closed)
 
     def spider_opened(self, spider):
-        self.file = open('spider-%s' % spider.name, 'w+b')
+        self.file = open('spider-%s.json' % spider.name, 'w+b')
         self.exporter = JsonItemExporter(self.file)
         self.exporter.start_exporting()
         pass

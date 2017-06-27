@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import datetime
 import time
+import functools
 
 
 def strip_values(values):
@@ -21,33 +22,40 @@ class DateStrToTimeStamp(object):
     def __call__(self, values):
         if len(values) < 1:
             return -1
-        date_list = DateStrToTimeStamp(values[0])
+        date_list = DateStrToTimeStamp.parse_origin_date(values[0])
+        print(date_list)
         date_str = DateStrToTimeStamp.concat_date_str(date_list)
         return DateStrToTimeStamp.to_ms(date_str)
 
     @staticmethod
+    def lint_date_str(date_str):
+        return ''.join(date_str.split())
+
+    @staticmethod
     def parse_origin_date(date_str):
         tmp = list()
+        date_str = DateStrToTimeStamp.lint_date_str(date_str)
         if '-' in date_str:
             tmp = date_str.split('-')
             if len(tmp) < 3:
-                tmp.append(1)
+                tmp.append('1')
             return tmp
         year_index = date_str.find('年')
         if year_index is -1:
-            tmp.append(1999)
+            tmp.append('1999')
         else:
-            tmp.append(int(date_str[:year_index]))
+            tmp.append(date_str[:year_index])
         month_index = date_str.find('月')
         if month_index is -1:
-            tmp.append(1)
+            tmp.append('1')
         else:
-            tmp.append(int(date_str[year_index + 1:month_index]))
-        tmp.append(1)
+            tmp.append(date_str[year_index + 1:month_index])
+        tmp.append('1')
+        return tmp
 
     @staticmethod
     def concat_date_str(date_list):
-        return '{}/{}/{}'.format(date_list)
+        return '/'.join(date_list)
 
     @staticmethod
     def to_ms(date_string):
@@ -60,3 +68,9 @@ class FirstInteger(object):
         if len(values) < 1:
             return -1
         return int(values[0])
+
+class FirstFloat(object):
+    def __call__(self, values):
+        if len(values) < 1:
+            return -1
+        return float(values[0])
