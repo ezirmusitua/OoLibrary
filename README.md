@@ -8,4 +8,5 @@
 [Python re.sub](https://www.crifan.com/python_re_sub_detailed_introduction/)  
 [Extracting extension from filename in python](https://stackoverflow.com/questions/541390/extracting-extension-from-filename-in-python/)  
 [Filter punctuation with python](http://blog.csdn.net/mach_learn/article/details/41744487)  
+[Python flask browsing through directory with files](https://stackoverflow.com/questions/23718236/python-flask-browsing-through-directory-with-files)
 
