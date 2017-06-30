@@ -1,0 +1,13 @@
+<md-sidenav-container class="side-nav-container">
+  <div class="top-bar" fxLayout="row" fxLayoutAlign="start center">
+    <button md-button (click)="focusSidenav.toggle()">
+      <md-icon svgIcon="dehaze">home</md-icon>
+    </button>
+  </div>
+  <md-sidenav #focusSidenav>
+    <md-nav-list fxLayout="column" fxLayoutAlign="start start">
+      <a md-list-item routerLink="/test" routerLinkActive="active">Test</a>
+    </md-nav-list>
+  </md-sidenav>
+  <router-outlet></router-outlet>
+</md-sidenav-container>
