@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.scss']
 })
-export class MainComponent implements OnInit {
+export class SearchComponent implements OnInit {
   tiles = [
     {text: 'One', cols: 1, rows: 1, color: 'lightblue'},
     {text: 'Two', cols: 1, rows: 1, color: 'lightgreen'},

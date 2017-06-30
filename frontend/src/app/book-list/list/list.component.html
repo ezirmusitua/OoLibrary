@@ -1,3 +1,28 @@
-<p>
-  list works!
-</p>
+<section class="container">
+  <article class="float-search-input">
+    <input mdInput value="Javascript,DOM">
+  </article>
+  <article class="book-list">
+    <md-grid-list cols="4" rowHeight="256px">
+      <md-grid-tile
+        *ngFor="let tile of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]"
+        [colspan]="1"
+        [rowspan]="1">
+        <md-card class="book-card">
+          <md-card-header>
+            <div md-card-avatar class="example-header-image"></div>
+            <md-card-title>Shiba Inu</md-card-title>
+            <md-card-subtitle>Dog Breed</md-card-subtitle>
+          </md-card-header>
+          <md-card-content>
+            <p>
+              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+              A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+              bred for hunting.
+            </p>
+          </md-card-content>
+        </md-card>
+      </md-grid-tile>
+    </md-grid-list>
+  </article>
+</section>
