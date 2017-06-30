@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SearchComponentComponent } from './search-component/search-component.component';
 import { SearchCtrlComponent } from './search-ctrl/search-ctrl.component';
 import { ListComponent } from './list/list.component';
+import { MainComponent } from './main/main.component';
+import { BookListRoutingModule } from './book-list-routing.module';
+import { MdGridListModule } from '@angular/material';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    BookListRoutingModule,
+    MdGridListModule,
   ],
-  declarations: [SearchComponentComponent, SearchCtrlComponent, ListComponent]
+  declarations: [SearchCtrlComponent, ListComponent, MainComponent]
 })
 export class BookListModule { }

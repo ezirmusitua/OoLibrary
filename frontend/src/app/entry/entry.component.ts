@@ -4,8 +4,8 @@ import { MdIconRegistry } from '@angular/material';
 
 @Component({
   selector: 'app-side-nav',
-  templateUrl: './side-nav.component.html',
-  styleUrls: ['./side-nav.component.scss']
+  templateUrl: './entry.component.html',
+  styleUrls: ['./entry.component.scss']
 })
 export class SideNavComponent implements OnInit {
 

@@ -1,0 +1,18 @@
+<section class="container" fxLayout="column" fxLayoutAlign="start center">
+  <article class="title">
+    <h1>OoLibrary</h1></article>
+  <article class="search-input">
+    <input placeholder="输入书名/关键词进行搜索">
+  </article>
+  <article class="history">
+    <md-grid-list cols="4" rowHeight="128px">
+      <md-grid-tile
+        *ngFor="let tile of tiles"
+        [colspan]="tile.cols"
+        [rowspan]="tile.rows"
+        [style.background]="tile.color">
+        {{tile.text}}
+      </md-grid-tile>
+    </md-grid-list>
+  </article>
+</section>

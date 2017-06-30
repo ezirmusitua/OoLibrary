@@ -2,16 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { SideNavComponent } from './side-nav/side-nav.component';
+import { SideNavComponent } from './entry/entry.component';
 import { MdButtonModule, MdIconModule, MdSidenavModule } from '@angular/material';
 import { HttpModule } from '@angular/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { RouterModule, Routes } from '@angular/router';
 import { TestComponent } from './test.component';
+import { AppRoutingModule } from './app-routing.module';
+import { SettingModule } from './setting/setting.module';
+import { BookListModule } from './book-list/book-list.module';
+import { BookDetailModule } from './book-detail/book-detail.module';
 
-const appRoutes: Routes = [
-  { path: 'test', component: TestComponent },
-];
 
 @NgModule({
   declarations: [
@@ -26,11 +26,10 @@ const appRoutes: Routes = [
     MdButtonModule,
     HttpModule,
     FlexLayoutModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    )
-    // other imports here
+    AppRoutingModule,
+    SettingModule,
+    BookListModule,
+    BookDetailModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
